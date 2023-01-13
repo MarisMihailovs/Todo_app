@@ -40,18 +40,20 @@ ul {
 }
 
 .drag-container {
+  height: 85vh;
   margin: 20px;
 }
 
 .drag-list {
   display: flex;
   align-items: flex-start;
+  height: 85vh;
 }
 
 /* Columns */
 .drag-column {
-
-  margin: 0 10px;
+  flex: 1;
+  margin: 0px 10px;
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
@@ -89,7 +91,7 @@ ul {
 /* Custom Scrollbar */
 .custom-scroll {
   overflow-y: auto;
-  max-height: 75vh;
+  max-height: 70vh;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
