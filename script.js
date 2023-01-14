@@ -73,6 +73,7 @@ function createItemEl(columnEl, column, item, index) {
 
 // Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
+
   // Check localStorage once
   if (!updatedOnLoad) {
     getSavedColumns();
@@ -117,11 +118,16 @@ function allowDrop(e) {
 function dragEnter(column) {
   listColumn[column].classList.add('over');
   currentColumn = column;
+  listColumn.forEach((element, index) => {
+    if (column !== index) {
+      element.classList.remove('over');
+    }
+  });
+  console.log(listColumn);
+  console.log(currentColumn);
 }
 
-function dragleave() {
-  this.classList.remove('over');
-}
+
 
 // dropping item in column
 function drop(e) {
@@ -136,10 +142,6 @@ function drop(e) {
 
 }
 
-listColumn[0].addEventListener("dragleave", dragleave)
-listColumn[1].addEventListener("dragleave", dragleave)
-listColumn[2].addEventListener("dragleave", dragleave)
-listColumn[3].addEventListener("dragleave", dragleave)
 // onload
 
 updateDOM();
